@@ -2,7 +2,7 @@
 
 ## October 15, 2022 - Philip Posgate
 
-Ok, it's been a long time since I last created a project on GitHub.  This will be another example of SpringBoot API, but this time with Docker and Kubernetes.  I am doing this with the recent experience I've gained as an engineer at SunLife, but using the standard practice that is described by the article at https://spring.io/guides/gs/spring-boot-kubernetes/.
+Ok, it's been a long time since I last created a project on GitHub.  This will be another example of SpringBoot API, but this time with Docker and Kubernetes.  Initially I will follow the standard practice that is described by the article at https://spring.io/guides/gs/spring-boot-kubernetes/, which produces a very simple working solution.  Later I will evolve this with more advanced techniques, based my own knowledge and experience.
 
 My local workstation is Windows 11, with JDK11 and WSL and Docker Deskop installed.  I've configured my Docker Desktop to have Kubernetes enabled.  I can run both **docker** and **kubectl** command-line tools.  Executing the ```kubectl config current-context``` command reveals I am using my local **docker-desktop** cluster.  For command line, I switch between using Windows cmd and GitBash...but I generally prefer using GitBash for that "linuxy feel".  I'm also using Visual Studio Code as my IDE.
 
