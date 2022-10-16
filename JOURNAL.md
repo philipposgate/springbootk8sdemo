@@ -72,7 +72,7 @@ Now I want to test my app.  If I try to hit http://localhost:8080/actuator in my
 
 ### Deleting the Kubernetes deployment (clean up)
 
-To clean up my kubernetes deployment, I use "kubectl delete" commands to delete the objects that I were created.
+To clean up my kubernetes deployment, I use "kubectl delete" commands to delete the objects that were created.
 
 e.g.
 
