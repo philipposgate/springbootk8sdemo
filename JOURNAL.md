@@ -6,11 +6,15 @@ Ok, it's been a long time since I last created a project on GitHub.  This will b
 
 My local workstation is Windows 11, with JDK11 and WSL and Docker Deskop installed.  I've configured my Docker Desktop to have Kubernetes enabled.  I can run both **docker** and **kubectl** command-line tools.  Executing the ```kubectl config current-context``` command reveals I am using my local **docker-desktop** cluster.  For command line, I switch between using Windows cmd and GitBash...but I generally prefer using GitBash for that "linuxy feel".  I'm also using Visual Studio Code as my IDE.
 
+<BR>
+
 ### Get the basic SpringBoot API working...
 
 I generated a Gradle project called "springbootk8sdemo" at https://start.spring.io/ with just **web** and **actuator** dependencies.  I download the zip file and extract it on my local, do the usual ```git init``` and ```git remote add origin ...``` stuff, and push it up to https://github.com/philipposgate/springbootk8sdemo.  I also added this **JOURNAL.md** file to the project because I intend to journal my progress as I go.
 
 Ok, first thing I do is make sure I can build and test the project.  So I make sure the ```./gradlew clean build``` and ```./gradlew clean test``` commands work, and they do.  After running the build command you can see the Java jar-file at ```build/libs/springbootk8sdemo-0.0.1-SNAPSHOT.jar```.  This is a self-executing jar that starts up a Tomcat instance.  So when I execute ```java -jar build/libs/springbootk8sdemo-0.0.1-SNAPSHOT.jar``` (or the ```./gradlew bootRun``` command) I can see SpringBoot start up in the standard output, and it opens port 8080.  With this I can hit http://localhost:8080/actuator in my browser and get a response from the API - **woohoo!**
+
+<BR>
 
 ### Get it running in Docker...
 
@@ -21,6 +25,8 @@ Now I need to test this image by running it.  So I execute ```docker run -p 8080
 Note: What I really want is a Dockerfile in the root of my project, which i can "docker build" manually...I'll have to figure that out later.
 
 Note: While my docker container is running I can see it with ```docker ps``` and I can stop it with ```docker stop <containerId>```.
+
+<BR>
 
 ### Get it running in Kubernetes...
 
@@ -61,3 +67,16 @@ e.g.
 Now I want to test my app.  If I try to hit http://localhost:8080/actuator in my browser at this time it won't work.  Even though the app is running in Kubernetes, and even though it has a "clusterIP service" for port 8080, I still can't reach it from my "host" computer.  There are several options to make this work, but for now I will use a simple "port-forward" technique by executing ```kubectl port-forward svc/springbootk8sdemo 8080:8080```.  This maps port 8080 on my "host" computer to port 8080 in the "cluster"....
 
 ...and THEN I can hit http://localhost:8080/actuator - **woohoo!**
+
+<BR>
+
+### Deleting the Kubernetes deployment (clean up)
+
+To clean up my kubernetes deployment, I use "kubectl delete" commands to delete the objects that I were created.
+
+e.g.
+
+```
+kubectl delete deployment springbootk8sdemo
+kubectl delete service springbootk8sdemo
+```
