@@ -80,3 +80,9 @@ e.g.
 kubectl delete deployment springbootk8sdemo
 kubectl delete service springbootk8sdemo
 ```
+
+<BR>
+
+## October 16, 2022 - Philip Posgate
+
+I think this is as far as I will develop this chapter.  It serves its purpose to demonstrate the most basic setup for a SpringBoot/Docker/Kubernetes application.  [CHAPTER 2](https://github.com/philipposgate/springbootk8sdemo2) will take things to the next level.
