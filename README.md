@@ -1,5 +1,5 @@
 # springbootk8sdemo
 
-This is a demo Spring Boot API with Docker containerization and Kubernetes deployment.  Inspiration taken from https://spring.io/guides/gs/spring-boot-kubernetes/
+This project is an experiment of a Spring Boot API with Docker containerization and Kubernetes deployment.  
 
-See [JOURNAL.md](JOURNAL.md) for more details.
+Also, check out the [JOURNAL](JOURNAL.md).

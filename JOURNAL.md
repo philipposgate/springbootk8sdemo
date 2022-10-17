@@ -30,7 +30,7 @@ Note: While my docker container is running I can see it with ```docker ps``` and
 
 ### Get it running in Kubernetes...
 
-The next thing I want to do is get the Docker image to run as a container in a Kubernetes cluster.  So I must define a "kubernetes manifest" for my application, which are yaml files.   According to the article we can execute a bunch of **kubectl** commands to generate the yaml manifest files, and then we can execute a **kubectl apply** command to upload the manifest to Kubernetes, which will trigger Kubernetes to automatically schedule a deployment of my app.
+The next thing I want to do is get that Docker container to run in a Kubernetes pod, on some worker node, on my local "docker-desktop" cluster.  So I must define a "kubernetes manifest" for my application, which are expressed as "Kustomize" yaml files.   According to the article we can execute a bunch of **kubectl** commands to generate the yaml manifest files, and then we can execute a **kubectl apply** command to upload the manifest to Kubernetes, which will trigger Kubernetes to automatically schedule a deployment of my app.
 
 So here's how I generate my yaml manifest files...
 
