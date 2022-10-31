@@ -6,14 +6,14 @@ This project is **CHAPTER 1** of a **Demo Spring Boot API with Docker containeri
 
 ## BASIC USAGE
 
-Build and deploy the app with the following commands...
+Build the app with the following commands...
 
 ```
 ./gradlew clean build
 ./gradlew bootBuildImage
 ```
 
-...then run it in kubernetes with:
+...then deploy it in kubernetes with:
 ```
 kubectl apply -f kubernetes/deployment.yaml
 ```
